@@ -1,0 +1,17 @@
+<h2><%= @post.title %></h2>
+<p><%= @post.body %>
+<hr />
+<%= link_to "Edit", edit_post_path(@post), :class => 'btn btn-primary' %>
+<%= link_to "Delete", post_path(@post), method: :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn-danger' %>
+
+<%# what's the diff between edit_post_path and post_path? %>
+
+<hr />
+
+
+<%= render 'comments/comments' %>
+<%= render 'comments/form' %>
+
+
+<h3>Params</h3>
+<%= params.inspect %>

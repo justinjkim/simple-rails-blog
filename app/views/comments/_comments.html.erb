@@ -1,0 +1,14 @@
+<h3>Comments</h3>
+<% @post.comments.each do |comment| %>
+  <div class="jumbotron">
+    <p>
+      <strong><%= comment.username %></strong>: <%= comment.body %>
+      <%= link_to 'X', [comment.post, comment], # previously I had it as 'post_path(@post)', but that didn't work
+                                                # but what is this new [comment.post, comment] parameter??
+        method: :delete, 
+        data: { confirm: 'Really?'}, 
+        :class => 'btn btn-danger' 
+      %>
+    </p>
+  </div>
+<% end %>
